@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="eRent">
+    <!-- Opens the e-Rent web app in Chrome browser version 116 and above -->
+    <test name="OpenTheWebApp-ChromeNewVersions">
+        <parameter name="browser" value="CHROMENew"/>
+        <parameter name="version" value="116"/>
+        <classes>
+            <class name="Tests.OpenTheWebApp"/>
+        </classes>
+    </test>
+    <!-- Opens the e-Rent web app in Chrome browser older version-->
+    <test name="OpenTheWebApp-Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="version" value="114"/>
+        <classes>
+            <class name="Tests.OpenTheWebApp"/>
+        </classes>
+    </test>
+    <!-- Opens the e-Rent web app in Firefox browser -->
+    <test name="OpenTheWebApp-Firefox">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="version" value="118"/>
+        <classes>
+            <class name="Tests.OpenTheWebApp"/>
+        </classes>
+    </test>
+    <!-- Opens the e-Rent web app in Edge browser-->
+    <test name="OpenTheWebApp-Edge">
+        <parameter name="browser" value="Edge"/>
+        <parameter name="version" value="117"/>
+        <classes>
+            <class name="Tests.OpenTheWebApp"/>
+        </classes>
+    </test>
+</suite>
