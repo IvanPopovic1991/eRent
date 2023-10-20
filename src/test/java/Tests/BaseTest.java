@@ -10,7 +10,7 @@ public class BaseTest {
     WebDriver driver;
 
     /*
-    baseSetUp method for launching different browsers
+    baseSetUp method for launching different browsers and different versions
     */
     public void baseSetUp(String browser, String version) {
 
@@ -46,5 +46,8 @@ public class BaseTest {
         // navigate to the e-Rent web app and maximize the window
         driver.get("https://erentfrontend.onrender.com");
         driver.manage().window().maximize();
+    }
+    public void baseTearDown(){
+        driver.quit();
     }
 }

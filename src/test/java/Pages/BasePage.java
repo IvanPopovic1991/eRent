@@ -18,6 +18,7 @@ public class BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     /* Methods for clicking on a web element, typing text into input fields, and getting specific text; also describes actions
        related to web elements, by printing text to the console.
      */
@@ -44,29 +45,30 @@ public class BasePage {
             wait.until(ExpectedConditions.elementToBeClickable(element));
             element.clear();
             element.sendKeys(text);
-            System.out.println("Typed :" + text + "in" + log + "field");
+            System.out.println("Typed :" + text + " in" + log + " field");
         } catch (StaleElementReferenceException e) {
             element.clear();
             element.sendKeys(text);
-            System.out.println("Typed :" + text + "in" + log + "field");
+            System.out.println("Typed :" + text + " in" + log + " field");
         }
     }
-    public String getText(By by, String log){
-        try{
-            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+
+    public String getText(By by, String log) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
-            System.out.println("Text"+log+"is displayed");
+            System.out.println("Text " + log + " is displayed");
             return driver.findElement(by).getText();
-        }
-        catch(StaleElementReferenceException e){
-            System.out.println("Text"+log+"is displayed");
+        } catch (StaleElementReferenceException e) {
+            System.out.println("Text " + log + " is displayed");
             return driver.findElement(by).getText();
         }
     }
+
     //Method for taking screenshots
     public void takeScreenshot(String screenshotName) throws IOException {
-        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file,new File("C:\\Users\\ivanp\\Desktop\\Automation projects\\eRent\\src\\test\\java\\" +
-                "screenshot\\"+screenshotName+".png"));
+        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(file, new File("C:\\Users\\ivanp\\Desktop\\Automation projects\\eRent\\src\\test\\java\\" +
+                "screenshot\\" + screenshotName + ".png"));
     }
 }
