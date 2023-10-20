@@ -1,6 +1,7 @@
 package Tests;
 
 import Pages.BasePage;
+import jdk.jfr.Description;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,6 +27,7 @@ public class OpenTheWebApp extends BaseTest {
 
     //Method contains steps for accessing web app on browser and taking screenshot
     @Test(description = "Navigate to the e-Rent web app on Google, Firefox and Microsoft Edge browsers")
+    @Description("htpps://erentfrontend.onrender.com/ link redirects user to to the eRent web application")
     public void openTheWebApp() throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(titleIs("e-Rent"));
