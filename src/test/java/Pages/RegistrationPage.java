@@ -34,7 +34,7 @@ public class RegistrationPage extends BasePage {
     // Submit button xpath
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitBtn;
-    @FindBy(xpath = "//div[@class='flex h-[80px] w-[80px] cursor-pointer items-center justify-center bg-primary-yellow lg:ml-auto xl:h-[100px] xl:w-[100px]']")
+    @FindBy(xpath = "//div[@class='relative flex h-20 w-20 cursor-pointer items-center justify-center bg-primary-yellow lg:ml-auto ']")
     public WebElement userIcon;
     // Registruj se button
     @FindBy(xpath = "//a[@href='/register' and contains(text(),'Registruj se')]")
@@ -74,7 +74,7 @@ public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//a[@href='/login' and contains(text(),'Prijavite se')]")
     public WebElement loginLink;
     // Vratite se na početnu link
-    @FindBy(xpath = "//p[@class='font-medium' and contains(text(),'Vratite se na početnu')]")
+    @FindBy(xpath = "//p[@class='text-[10px] font-medium 2xl:text-xl']")
     public WebElement backToHomeLink;
     @FindBy(xpath = "//div[@role='alert']//..//div[contains(text(),'Molimo Vas da prihvatite uslove korišćenja!')]")
     public WebElement termsAndConditionMsg;

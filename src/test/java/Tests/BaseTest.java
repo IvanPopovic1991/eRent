@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Set;
+
 public class BaseTest {
     WebDriver driver;
 
@@ -46,6 +48,17 @@ public class BaseTest {
         // navigate to the e-Rent web app and maximize the window
         driver.get("https://erentfrontend.onrender.com");
         driver.manage().window().maximize();
+    }
+    public void newWindowIsOpen(){
+        String currentHandle = driver.getWindowHandle();
+        //Get all the handles currently available
+        Set<String> handles = driver.getWindowHandles();
+        for(String actual: handles){
+            if(!actual.equalsIgnoreCase(currentHandle)){
+                //Switch to the opened tab
+                driver.switchTo().window(actual);
+            }
+        }
     }
     public void baseTearDown(){
         driver.quit();
