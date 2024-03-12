@@ -1,11 +1,15 @@
 package Tests;
 
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.io.FileHandler;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 public class BaseTest {
@@ -49,18 +53,20 @@ public class BaseTest {
         driver.get("https://erentfrontend.onrender.com");
         driver.manage().window().maximize();
     }
-    public void newWindowIsOpen(){
+
+    public void newWindowIsOpen() {
         String currentHandle = driver.getWindowHandle();
         //Get all the handles currently available
         Set<String> handles = driver.getWindowHandles();
-        for(String actual: handles){
-            if(!actual.equalsIgnoreCase(currentHandle)){
+        for (String actual : handles) {
+            if (!actual.equalsIgnoreCase(currentHandle)) {
                 //Switch to the opened tab
                 driver.switchTo().window(actual);
             }
         }
     }
-    public void baseTearDown(){
+
+    public void baseTearDown() {
         driver.quit();
     }
 }

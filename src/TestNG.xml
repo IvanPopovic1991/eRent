@@ -2,39 +2,64 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="eRent">
 
-    <!-- Sign in page tests - Chrome browser version 116 and above -->
-    <test name="Register page tests - ChromeNewVersions">
+    <!-- Add ad test - Chrome browser version 116 and above -->
+    <test name="Add Tourism and vacation ad test - ChromeNewVersions">
         <parameter name="browser" value="CHROMENew"/>
         <parameter name="version" value="116"/>
+        <parameter name="category" value="Turizam i odmor"/>
+        <parameter name="subcategory" value="More"/>
+        <parameter name="adTitle" value="Ad Test - Chrome"/>
+        <parameter name="object" value="Hotel"/>
+        <parameter name="structure" value="Studio"/>
+        <parameter name="checkboxType" value="Parking mesto"/>
         <classes>
-            <class name="Tests.UserSignInTests"/>
+            <class name="Tests.AddAdTests"/>
         </classes>
     </test>
 
-    <!-- Sign in page tests - Chrome browser older version -->
-    <test name="Register page tests - Chrome">
+    <!-- Add ad test - Chrome browser older version -->
+    <test name="Add Tourism and vacation ad test - Chrome">
         <parameter name="browser" value="Chrome"/>
         <parameter name="version" value="114"/>
+        <parameter name="category" value="Turizam i odmor"/>
+        <parameter name="subcategory" value="More"/>
+        <parameter name="adTitle" value="Ad Test - Chrome older version"/>
+        <parameter name="object" value="Hotel"/>
+        <parameter name="structure" value="Studio"/>
+        <parameter name="checkboxType" value="Parking mesto"/>
         <classes>
-            <class name="Tests.UserSignInTests"/>
+            <class name="Tests.AddAdTests"/>
         </classes>
     </test>
 
-    <!-- Sign in page tests - Firefox browser -->
-    <test name="Register account tests - Firefox">
+    <!-- Add ad test - Firefox browser -->
+    <test name="Add Tourism and vacation ad test - Firefox">
         <parameter name="browser" value="Firefox"/>
-        <parameter name="version" value="118"/>
+        <parameter name="version" value="124"/>
+        <parameter name="category" value="Turizam i odmor"/>
+        <parameter name="subcategory" value="Splavovi"/>
+        <parameter name="adTitle" value="Ad Test - Firefox"/>
+        <parameter name="city" value="Novi Sad"/>
+        <parameter name="object" value="Vikendica"/>
+        <parameter name="structure" value="Jednosoban"/>
+        <parameter name="checkboxType" value="Parking mesto"/>
         <classes>
-            <class name="Tests.UserSignInTests"/>
+            <class name="Tests.AddAdTests"/>
         </classes>
     </test>
 
-    <!-- Sign in page tests - Edge browser -->
-    <test name="Sign in page tests - Edge">
+    <!-- Add ad test - Edge browser -->
+    <test name="Add Tourism and vacation ad test - Edge">
         <parameter name="browser" value="Edge"/>
-        <parameter name="version" value="119"/>
+        <parameter name="version" value="122"/>
+        <parameter name="category" value="Turizam i odmor"/>
+        <parameter name="subcategory" value="Banje"/>
+        <parameter name="adTitle" value="Ad Test - Edge"/>
+        <parameter name="object" value="Hotel"/>
+        <parameter name="structure" value="Studio"/>
+        <parameter name="checkboxType" value="Parking mesto"/>
         <classes>
-            <class name="Tests.UserSignInTests"/>
+            <class name="Tests.AddAdTests"/>
         </classes>
     </test>
 </suite>
