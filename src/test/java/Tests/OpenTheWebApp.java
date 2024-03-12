@@ -27,11 +27,15 @@ public class OpenTheWebApp extends BaseTest {
 
     //Method contains steps for accessing web app on browser and taking screenshot
     @Test(description = "Navigate to the e-Rent web app on Google, Firefox and Microsoft Edge browsers")
+    @Parameters({"browser"})
     @Description("htpps://erentfrontend.onrender.com/ link redirects user to to the eRent web application")
-    public void openTheWebApp() throws IOException {
+    public void openTheWebApp(String browser) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(titleIs("e-Rent"));
         new BasePage(driver).takeScreenshot("e-Rent Homepage");
+        if(browser.equals("Firefox")) {
+            new BasePage(driver).takeFullPageScreenshot("Erent web application");
+        }
     }
 
     //tearDown method for driver quitting
